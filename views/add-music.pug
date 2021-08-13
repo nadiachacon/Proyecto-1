@@ -1,0 +1,38 @@
+extends layout.pug
+
+block content
+
+        section.container 
+              div.item.logo 
+              div.item 
+                    h1 
+                        a(href="/")= title
+              div.item 
+                  form.form(method="POST" action="/")
+                          fieldset
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="registro") Registro:
+                                input.item.i-b.v-top.ph9.p_25#registro(type="text", name="registro", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="gimnasta") Gimnasta:
+                                input.item.i-b.v-top.ph9.p_25#gimnasta(type="text", name="gimnasta", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="categoria") Categoría:
+                                input.item.i-b.v-top.ph9.p_25#categoria(type="text", name="categoria", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="implemento") Implemento:
+                                input.item.i-b.v-top.ph9.p_25#implemento(type="text", name="implemento", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="imagen") Imagen:
+                                input.item.i-b.v-top.ph9.p_25#imagen(type="text", name="imagen", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="voz") Voz:
+                                input.item.i-b.v-top.ph9.p_25#voz(type="text", name="voz", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="tiempo") Tiempo:
+                                input.item.i-b.v-top.ph9.p_25#tiempo(type="text", name="tiempo", required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="musica") Música:
+                                input.item.i-b.v-top.ph9.p_25#musica(type="text", name="musica", required)    
+                              div.container.p1
+                                input.item.ph4.mauto.button.add(type="submit", value="Agregar")

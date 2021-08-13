@@ -1,0 +1,84 @@
+html {
+  background-color: #1d1d1d;
+}
+
+a,
+h1,
+h2,
+label {
+  color: #e256b8;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+fieldset {
+  padding: 1rem;
+  border: medium solid #e256b8;
+}
+
+.logo {
+  display: block;
+  margin: 1rem auto;
+  width: 450px;
+  height: 150px;
+  background: url("../img/logo_Ritmica_Macabi.jpg") no-repeat center;
+  background-size: contain;
+}
+
+.error {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: #8b0785;
+  color: #fff;
+}
+
+.poster {
+  max-width: 100px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table td,
+.table th {
+  padding: 1rem;
+}
+
+.table tr:first-child {
+  background-color: #292623;
+  color: #e256b8;
+}
+
+.table tr:nth-child(even) {
+  background-color: #ccc;
+}
+
+.table tr:nth-child(odd):not(:first-child) {
+  background-color: #eee;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #e256b8;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.75;
+}
+
+.add {
+  background-color: rgb(48, 84, 241);
+}
+
+.edit {
+  background-color: #3ee4f0;
+}
+
+.delete {
+  background-color: #d23641;
+}

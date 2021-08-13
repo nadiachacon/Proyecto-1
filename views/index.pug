@@ -1,0 +1,55 @@
+extends layout.pug
+
+block content 
+
+    section.container 
+      div.item.logo 
+      div.item 
+          h1 
+              a(href="/")=title
+      article.item 
+                    -if(data.length)
+                          table.table
+                                  tr
+                                    th Registro
+                                    th Gimnasta
+                                    th Categoria
+                                    th Implemento
+                                    th Imagen
+                                    th Voz 
+                                    th Tiempo 
+                                    th Música
+                                    th(colspan="2")
+                                              form(method="GET" action="/agregar")
+                                               input.button.add(type="submit", value="Agregar")
+                                  each music in data
+                                    tr
+                                        td #{music.registro}
+                                        td #{music.gimnasta}
+                                        td #{music.categoria}
+                                        td #{music.implemento}
+                                        td 
+                                              img.poster(src= `${music.imagen}`, alt= `${music.title}`)
+                                        td #{music.voz}
+                                        td #{music.tiempo}
+                                        td 
+                                            p.
+                                                #[a(href=`${music.musica}`, target="_blank") Link]
+                                  
+                                        td
+                                              form(method="GET" action=`/editar/`+music.registro)
+                                                    input.button.edit(type="submit", value="Editar")
+                                        td
+                                              form(method="POST" action=`/eliminar/`+music.registro)
+                                                    input.button.delete(type="button", value="Eliminar" onclick='eliminar(this)') 
+                                                    input(type="hidden", name="_method", value="DELETE")
+
+                          script.
+                                  function eliminar(input)
+                                 {
+                                      var deleteOk = confirm('¿Estás seguro de eliminar la data?')
+                                      return (deleteOk) ? input.parentNode.submit()
+                                       : false
+                                  }
+                    -else
+                          p.error No existe información en la base de datos             

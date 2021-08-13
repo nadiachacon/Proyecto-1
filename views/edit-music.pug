@@ -1,0 +1,40 @@
+extends layout.pug
+
+block content
+
+        section.container 
+              div.item.logo 
+              div.item 
+                    h1 
+                        a(href="/")= title
+              div.item 
+                  form.form(method="POST" action=`/actualizar/${data[0].registro}`)
+                          fieldset
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="registro") Registro:
+                                input.item.i-b.v-top.ph9.p_25#reg(type="text", name="reg",value=`${data[0].registro}`, disabled,required)
+                                input#registro(type="hidden",name="registro", value=`${data[0].registro}`,required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="gimnasta") Gimnasta:
+                                input.item.i-b.v-top.ph9.p_25#gimnasta(type="text", name="gimnasta",value=`${data[0].gimnasta}`, required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="categoria") Categoría:
+                                input.item.i-b.v-top.ph9.p_25#categoria(type="text", name="categoria", value=`${data[0].categoria}`,required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="implemento") Implemento:
+                                input.item.i-b.v-top.ph9.p_25#implemento(type="text", name="implemento", value=`${data[0].implemento}`,required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="imagen") Imagen:
+                                input.item.i-b.v-top.ph9.p_25#imagen(type="text", name="imagen", value=`${data[0].imagen}`,required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="voz") Voz:
+                                input.item.i-b.v-top.ph9.p_25#voz(type="text", name="voz", value=`${data[0].voz}`, required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="tiempo") Tiempo:
+                                input.item.i-b.v-top.ph9.p_25#tiempo(type="text", name="tiempo", value=`${data[0].tiempo}`,required)
+                              div.container.p1
+                                label.item.i-b.v-top.ph3.p_25.right(for="musica") Música:
+                                input.item.i-b.v-top.ph9.p_25#musica(type="text", name="musica",value=`${data[0].musica}`, required)
+                              div.container.p1
+                                input.item.ph4.mauto.button.edit(type="submit", value="Editar")
+                                input(type="hidden", name="_method", value="PUT")                                
